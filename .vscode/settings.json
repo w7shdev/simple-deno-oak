@@ -1,0 +1,8 @@
+{
+  "editor.codeLensFontFamily": "'FiraCode NF', monospace.",
+  "editor.fontFamily": "'FiraCode NF', monospace",
+  "editor.fontLigatures": true,
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.unstable": true
+}
