@@ -1,5 +1,5 @@
 import { Application } from "./depts.ts";
-
+import { router } from "./api/auth.ts";
 const app = new Application();
 // listeners
 app.addEventListener("listen", ({ hostname, port, secure }) => {
@@ -26,8 +26,7 @@ app.use(async (ctx, next) => {
   ctx.response.headers.set("X-Response-Time", `${ms}ms`);
 });
 
-app.use((ctx) => {
-  ctx.response.body = "OK";
-});
+app.use(router.routes());
+app.use(router.allowedMethods());
 
 await app.listen({ port: 8000 });
